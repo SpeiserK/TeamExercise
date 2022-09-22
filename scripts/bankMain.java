@@ -9,10 +9,10 @@ public class bankMain {
 		
 		
 		user1.deposit(100000);
-		//user1.withdraw(6900);
+		user1.withdraw(6900);
 		
 		user2.deposit(400);
-		//user2.withdraw(401);
+		user2.withdraw(401);
 	}
 
 }
