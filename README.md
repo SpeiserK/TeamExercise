@@ -12,7 +12,7 @@ This app will allow you to withdraw and/or deposit from your account.
 
 # Feature 2: Make new account - Karlen - Tech Leader
 -User asked for name and an initial deposit amount\
--Account name and id message is conveyed back upon account creation\
+-Account name and id message is conveyed back upon account creation, info stored in BankAccounts.txt\
 -proceed to deposit/withdraw screen
 
 # Feature 3: Sign into existing account - Aidan - QA Leader
