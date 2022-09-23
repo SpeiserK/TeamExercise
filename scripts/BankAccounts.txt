@@ -3,3 +3,5 @@ dublin 10000.0 BA2
 sydney 1200.0 BA3
 ben 88.0 BA10
 sarah 55.0 BA11
+
+dirk 20.0 BA12
