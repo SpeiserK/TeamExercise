@@ -13,8 +13,10 @@ public class createAccountTest extends bankMain{
 		//make account using bankMain method
 		Account user = bankMain.createAccount(userName, userBal, 15);
 		//test values verifying objection creation
-		assertTrue(test.accountName==user.accountName);
-		assertTrue(test.accountId==user.accountId);
+		assertTrue(test.accountName.contentEquals(user.accountName));
+		assertTrue(test.accountId.contentEquals(user.accountId));
 		assertTrue(test.balance==user.balance);
+		
+		//assertEquals(test, user);
 	}
 }
