@@ -15,6 +15,6 @@ This app will allow you to withdraw and/or deposit from your account.
 # Feature 3: Sign into existing account - Aidan - QA Leader
 
 # Feature 4: Withdrawl & deposit actions - Cam - Project Manager
--Once a user is logged into their account they will receive a prompt for deposit, withdrawal, or exit actions
--User can deposit money into their account with deposit method
--User can make a withdrawal from their account with withdrawal method
+-Once a user is logged into their account they will receive a prompt for deposit, withdrawal, or exit actions\
+-User can deposit money into their account with deposit method\
+-User can make a withdrawal from their account with withdrawal method\
