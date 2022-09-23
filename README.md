@@ -6,8 +6,8 @@ An app that allows you to sign in or create a new bank account.\
 This app will allow you to withdraw and/or deposit from your account.
 
 # Feature 1: Menu screen - Zach - Client Liason
--User is welcomed to banking app
--User is asked whether they are new or returning customer
+-User is welcomed to banking app\
+-User is asked whether they are new or returning customer.\
 -Customer can respond by either entering 1 or 0 into the console.
 
 # Feature 2: Make new account - Karlen - Tech Leader
