@@ -1,4 +1,4 @@
-tim 50.0 BA1
+tim 550.0 BA1
 dublin 10000.0 BA2
 sydney 1200.0 BA3
 ben 88.0 BA10
