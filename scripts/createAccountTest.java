@@ -16,7 +16,5 @@ public class createAccountTest extends bankMain{
 		assertTrue(test.accountName.contentEquals(user.accountName));
 		assertTrue(test.accountId.contentEquals(user.accountId));
 		assertTrue(test.balance==user.balance);
-		
-		//assertEquals(test, user);
 	}
 }
