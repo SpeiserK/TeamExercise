@@ -1,11 +1,23 @@
 import java.util.Scanner;
-
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.FileWriter;
 public class bankMain {
 
-	public static void main(String[] args) {
-
+	public static void main(String[] args) throws IOException {
+		
+		BufferedReader input = new BufferedReader(new FileReader("bin/BankAccounts.txt"));
+	    String last = null, line;
+	    while ((line = input.readLine()) != null) { 
+	        last = line;
+	    }
+	    String lastToken = last.substring(last.lastIndexOf(" ") + 1);
+		
 		boolean exit = false;
-		int userCount = 0;
+		int userCount = Integer.parseInt(lastToken.substring(2));
 		Account user = null;
 		
 				//intro Page
@@ -68,6 +80,20 @@ public class bankMain {
 				System.out.println("Invalid choice.");
 			}
 		}while(exit!=true);
+		
+		//save account info
+		try {
+		      File myObj = new File("bin/BankAccounts.txt");
+		      
+	    	  FileWriter myWriter = new FileWriter("bin/BankAccounts.txt", true);
+	    	  myWriter.append("\n" + user.accountName + " " + user.balance  + " " + user.accountId );
+	    	  myWriter.close();
+		    } catch (IOException e) {
+		    	System.out.println("An error occurred.");
+		    	e.printStackTrace();
+		    }
+		
+		
 	
 		//user1.deposit(100000);
 		//user1.withdraw(6900);
