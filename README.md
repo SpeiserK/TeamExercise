@@ -1,7 +1,7 @@
 # TeamExercise
 499 Team Exercise OAC - Group C
 
-#Banking App
+# Banking App
 
 Feature 1: Menu screen - Zach - Client Liason
 
