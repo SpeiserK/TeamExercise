@@ -16,6 +16,9 @@ This app will allow you to withdraw and/or deposit from your account.
 -proceed to deposit/withdraw screen
 
 # Feature 3: Sign into existing account - Aidan - QA Leader
+-Ask user for bank account number.\
+-search BankAccounts.txt for user account, assign the user the information from their specified bank account.\
+-update bank account balance at end of session.\
 
 # Feature 4: Withdrawl & deposit actions - Cam - Project Manager
 -Once a user is logged into their account they will receive a prompt for deposit, withdrawal, or exit actions\
