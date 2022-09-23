@@ -23,8 +23,16 @@ public class bankMain {
 		
 		};
 		if (key==2) {//login to existing account
-			System.out.println("login to existing account");
-			//TODO: Insert Code Block
+			boolean trigger = true;
+			while (trigger) {
+				
+				System.out.println("login to existing account, enter Account name:");
+				String userInput = scan.next();
+				if (false) {//no match
+					System.out.println("no account matches that name, please try again");
+				} else trigger = true;
+			}
+			//read account info using account name, create user with appropriate attributes
 		
 		} if (key!=1 && key!=2) { System.out.println("invalid Entry");
 		}
