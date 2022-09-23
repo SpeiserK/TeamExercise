@@ -11,9 +11,10 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.io.FileWriter;
 public class bankMain {
-
+		//you may need to change the path strings depending on how you import the project
 	public static void main(String[] args) throws IOException {
 		//find correct userCount
+		//use this path to find the txt file:
 		BufferedReader input = new BufferedReader(new FileReader("scripts/BankAccounts.txt"));
 	    String last = null, line;
 	    while ((line = input.readLine()) != null) { 
@@ -62,7 +63,7 @@ public class bankMain {
 				userInput = scan.next();
 				
 				//check for account number in 'database'
-				
+				//again check this file for bank account info
 				BufferedReader inp = new BufferedReader(new FileReader("scripts/BankAccounts.txt"));
 			    last = null;
 			    while ((line = inp.readLine()) != null) { 
@@ -119,7 +120,7 @@ public class bankMain {
 		//user2.withdraw(401);
 	}
 	public static void updateAccount(String newnum, String oldnum) throws IOException {
-		
+		//bank account info in this file again
 		List<String> fileContent = new ArrayList<>(Files.readAllLines(Paths.get("scripts/BankAccounts.txt"), StandardCharsets.UTF_8));
 	
 		for (int i = 0; i < fileContent.size(); i++) {
@@ -140,7 +141,7 @@ public class bankMain {
 			Account user = new Account(name,"BA"+count,balance);
 			System.out.println("Thank you.");
 			System.out.println("Your account name is "+user.accountName+"\nYour account id is "+user.accountId);
-			
+			//write user info into bankaccounts txt file
 			try {
 			      
 		    	  FileWriter myWriter = new FileWriter("scripts/BankAccounts.txt", true);
