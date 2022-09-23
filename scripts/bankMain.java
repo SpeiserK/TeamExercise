@@ -12,9 +12,16 @@ import java.nio.file.Paths;
 import java.io.FileWriter;
 public class bankMain {
 
+
 	public static void main(String[] args) throws IOException {
 		//find correct userCount
 		BufferedReader input = new BufferedReader(new FileReader("src/BankAccounts.txt"));
+
+		//you may need to change the path strings depending on how you import the project
+	public static void main(String[] args) throws IOException {
+		//find correct userCount
+		//use this path to find the txt file:
+
 	    String last = null, line;
 	    while ((line = input.readLine()) != null) { 
 	        last = line;
@@ -62,8 +69,13 @@ public class bankMain {
 				userInput = scan.next();
 				
 				//check for account number in 'database'
+
 				
 				BufferedReader inp = new BufferedReader(new FileReader("src/BankAccounts.txt"));
+
+				//again check this file for bank account info
+				BufferedReader inp = new BufferedReader(new FileReader("scripts/BankAccounts.txt"));
+
 			    last = null;
 			    while ((line = inp.readLine()) != null) { 
 			        last = line;
@@ -106,12 +118,23 @@ public class bankMain {
 				System.out.println("Invalid choice.");
 			}
 		}while(exit!=true);
+
+		
+		//save account info
+		if(key==2)updateAccount(user.accountName + " " + user.balance + " " + user.accountId, last);
+		
+		
+	
+		//user1.deposit(100000);
+		//user1.withdraw(6900);
+
 		
 		//save account info
 		if(key==2)updateAccount(user.accountName + " " + user.balance + " " + user.accountId, last);
 		
 	}
 	public static void updateAccount(String newnum, String oldnum) throws IOException {
+
 		
 		List<String> fileContent = new ArrayList<>(Files.readAllLines(Paths.get("src/BankAccounts.txt"), StandardCharsets.UTF_8));
 	
@@ -125,6 +148,20 @@ public class bankMain {
 	}
 
 	
+
+		//bank account info in this file again
+		List<String> fileContent = new ArrayList<>(Files.readAllLines(Paths.get("scripts/BankAccounts.txt"), StandardCharsets.UTF_8));
+	
+		for (int i = 0; i < fileContent.size(); i++) {
+		    if (fileContent.get(i).equals(oldnum)) {
+		        fileContent.set(i, newnum);
+		        break;
+		    }
+		}
+		Files.write(Paths.get("scripts/BankAccounts.txt"), fileContent, StandardCharsets.UTF_8);
+	}
+
+
 	
 
 	//create account method
@@ -133,10 +170,17 @@ public class bankMain {
 			Account user = new Account(name,"BA"+count,balance);
 			System.out.println("Thank you.");
 			System.out.println("Your account name is "+user.accountName+"\nYour account id is "+user.accountId);
+
 			
 			try {
 			      
 		    	  FileWriter myWriter = new FileWriter("src/BankAccounts.txt", true);
+
+			//write user info into bankaccounts txt file
+			try {
+			      
+		    	  FileWriter myWriter = new FileWriter("scripts/BankAccounts.txt", true);
+
 		    	  myWriter.append("\n" + user.accountName + " " + user.balance  + " " + user.accountId );
 		    	  myWriter.close();
 			    } catch (IOException e) {
