@@ -6,6 +6,9 @@
 Feature 1: Menu screen - Zach - Client Liason
 
 Feature 2: Make new account - Karlen - Tech Leader
+-User asked for name and an initial deposit amount
+-Account name and id message is conveyed back upon account creation
+-proceed to deposit/withdraw screen
 
 Feature 3: Sign into existing account - Aidan - QA Leader
 
