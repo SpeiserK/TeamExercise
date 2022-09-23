@@ -4,9 +4,9 @@ public class bankMain {
 
 	public static void main(String[] args) {
 
-		
-		int menu = 1;
-		
+		boolean exit = false;
+		int userCount = 0;
+		Account user = null;
 		
 				//intro Page
 		System.out.println("Welcome to Group C Bank! "
@@ -17,30 +17,65 @@ public class bankMain {
 		Scanner scan = new Scanner(System.in);
 		int key = scan.nextInt();
 		
-		if (key==1) {//create new account
-			System.out.println("create new account");
-			//TODO: Insert Code Block
-		
+		if (key==1) {
+			//update user count	
+			userCount++;
+			//get initial balance
+			System.out.println("Please enter intial deposit amount.");
+			double accBal = scan.nextDouble();
+			
+			//get name
+			System.out.println("Please enter your name.");
+			scan.nextLine();
+			String accName = scan.nextLine();
+			//create account
+			user = createAccount(accName,accBal,userCount);
+	
 		};
-		if (key==2) {//login to existing account
+		if (key==2) {
+			//login to existing account
 			System.out.println("login to existing account");
 			//TODO: Insert Code Block
-		
-		} if (key!=1 && key!=2) { System.out.println("invalid Entry");
+			//user = signIn();
+		} if (key!=1 && key!=2) { 
+			System.out.println("invalid Entry");
+			exit = true;
 		}
-
-		// TODO Auto-generated method stub
-
-		Account user1 = new Account("Chadwick P.", "BA001", 6900);
-		Account user2 = new Account("Mike Wazowski", "BA002", 0);
+		//enter do-while loop so user can withdraw/deposit until done
+		do {
+			System.out.println("To withdraw money press 1"
+					+"\nTo deposit money press 2"
+					+"\nTo exit press 0");
+			int choice = scan.nextInt();
+			if(choice==1) {
+				System.out.println("Enter withdraw amount");
+				double withNum = scan.nextDouble();
+				user.withdraw(withNum);
+			}else if(choice==2) {
+				System.out.println("Enter deposit amount");
+				double depoNum = scan.nextDouble();
+				user.deposit(depoNum);
+			}else if (choice==0){
+				exit = true;
+			}else {
+				System.out.println("Invalid choice.");
+			}
+		}while(exit!=true);
+	
+		//user1.deposit(100000);
+		//user1.withdraw(6900);
 		
-		
-		user1.deposit(100000);
-		user1.withdraw(6900);
-		
-		user2.deposit(400);
-		user2.withdraw(401);
-
+		//user2.deposit(400);
+		//user2.withdraw(401);
+	}
+	
+	//create account method
+	static Account createAccount(String name,double balance,int count) {
+			//make new account object
+			Account user = new Account(name,"BA"+count,balance);
+			System.out.println("Thank you.");
+			System.out.println("Your account name is "+user.accountName+"\nYour account id is "+user.accountId);
+			return user;
 	}
 }
 			
